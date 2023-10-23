@@ -14,7 +14,7 @@ jobs:
       shell: cmd
       run: |
         "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Auxiliary\Build\vcvars64.bat"
-        msbuild /t:Build /p:Configuration=Release YourDriverProject.sln
+        msbuild /t:Build /p:Configuration=Release csaudioacp2x.sln
       working-directory: .
 
     - name: Sign the driver (if necessary)
