@@ -13,7 +13,7 @@ jobs:
     - name: Set up MSVC environment
       shell: cmd
       run: |
-        "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Auxiliary\Build\vcvars64.bat"
+        "C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Auxiliary\Build\vcvars64.bat"
         msbuild /t:Build /p:Configuration=Release csaudioacp2x.sln
       working-directory: .
 
