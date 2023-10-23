@@ -1,0 +1,23 @@
+name: Windows Driver Build
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+      
+    - name: Set up MSVC environment
+      shell: cmd
+      run: |
+        "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Auxiliary\Build\vcvars64.bat"
+        msbuild /t:Build /p:Configuration=Release YourDriverProject.sln
+      working-directory: .
+
+    - name: Sign the driver (if necessary)
+      run: |
+        # Your driver signing commands here
+      working-directory: .
